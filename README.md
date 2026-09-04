@@ -1,12 +1,8 @@
 # Root My Device
 
-[日本語](README.ja.md) · [Security policy](SECURITY.md) 
-
-Root My Device is a public monorepo for two **exact-build**, temporary-root →
-KernelSU late-load projects:
-
+ [Security policy](SECURITY.md) 
+In this Fork, only the Nothing phone 3a is Supported
 - [Nothing Phone (3a)](devices/nothing-phone-3a/README.md)
-- [OnePlus Pad 3](devices/oneplus-pad-3/README.md)
 
 The Android applications, native payloads, target profiles, artifacts, and
 build outputs remain isolated by device. The repository produces **two
@@ -32,7 +28,6 @@ is implied to work.
 | Project | Required identity | Kernel / exploit core | Verification status |
 | --- | --- | --- | --- |
 | Nothing Phone (3a) | `MODEL=A059`, `DEVICE=Asteroids`, build `B4.1-260618-1048`, Android 16 / SDK 36, security patch `2026-06-01` | `6.1.157-android14-11-g82d681c9b06b-ab14634535`, `android14-6.1`, `core61`, arm64, 4096-byte pages | Maintainer device-verified for temporary root, KernelSU 32525 late-load, Manager authentication, and module stages on the exact profile. |
-| OnePlus Pad 3 | `MODEL=OPD2415`, `DEVICE=OP6190L1`, `PRODUCT=OPD2415IN`, build `OPD2415_16.0.9.400(EX01)`, Android 16 / SDK 36, security patch `2026-07-01` | `6.6.118-android15-8-g2e6b9c3812c5-ab15114928-4k`, `android15-6.6`, `core66`, arm64, 4096-byte pages | Maintainer device-verified for temporary root, KernelSU 32525 late-load, signer-matched Manager grant, and module/Vector stages on the exact profile. |
 
 Each application validates the complete profile documented in its device README
 before enabling Root. A model or product name alone is not sufficient.
@@ -55,20 +50,6 @@ The device projects:
 They do **not** unlock the bootloader, wipe data, disable AVB, patch a boot
 image, flash a partition, install persistent root, or guess offsets for another
 firmware.
-
-## Source provenance
-
-The device files were integrated from these source repositories:
-
-- `root-my-nothing` source HEAD:
-  `58df2d94cb907b589eef5f26f21f214a249c85b8`
-- `root-my-oneplus` source HEAD:
-  `ff7294631fce27e5cf0a345346dc16bb04d2412b`
-
-The combined repository has its own new integration commit. It is therefore
-correct for `git rev-parse HEAD` at the monorepo root to differ from both source
-HEADs. Machine-readable provenance is in
-[`SOURCE_PROVENANCE.json`](SOURCE_PROVENANCE.json).
 
 ## Repository layout
 
